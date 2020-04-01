@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .content {
+    width: 900px;
+    height: 600px;
+    border: 1px solid;
+    /* // 确定整体的透视中心 */
+    perspective: 1000px;
+    perspective-origin: 50% 1%; 
+  }
+  /* 只会旋转一次 */
+  /* 只会旋转一次 */
+  /* .content:hover .wrap { */
+    /* transform: rotateY(360deg);
+    transition: all 10s linear; 
+  } */
+
+  /* 不停的旋转 */
+  /* 不停的旋转 */
+  .content:hover .wrap {
+    animation: rotate_ani 2s linear infinite;
+  }
+  @keyframes rotate_ani {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  .wrap {
+    position: relative;
+    transform-style: preserve-3d;
+    top: 150px;
+    margin: 0 auto;
+    /* 一定要跟其内的内容一起摆正，因为旋转中心为它的中心 */
+    width: 100px;
+    height: 300px;
+    background: rgba(0, 0, 0, .5);
+  }
+  .item {
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+  }
+  .item1 {
+    background: red;
+    transform: rotateY(0deg) translateZ(200px)
+  }
+  .item2 {
+    background: yellow;
+    transform: rotateY(60deg) translateZ(200px)
+  }
+  .item3 {
+    background: green;
+    transform: rotateY(120deg) translateZ(200px)
+  }
+  .item4 {
+    background: blue;
+    transform: rotateY(180deg) translateZ(200px)
+  }
+  .item5 {
+    background: blueviolet;
+    transform: rotateY(240deg) translateZ(200px)
+  }
+  .item6 {
+    background: yellowgreen;
+    transform: rotateY(300deg) translateZ(200px)
+  }
+  
+</style>
+<body>
+  <div class="content">
+    <div class="wrap">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+      <div class="item item6">6</div>
+    </div>
+  </div>
+  
+</body>
+</html>

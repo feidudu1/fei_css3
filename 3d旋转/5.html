@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .content {
+    width: 900px;
+    height: 600px;
+    border: 1px solid;
+    /* // 确定整体的透视中心 */
+    perspective: 1000px;
+    perspective-origin: 50% 1%;
+  }
+  .wrap {
+    transform-style: preserve-3d;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, .1);
+    margin: 0 auto;
+    top: 100px;
+  }
+  /* .content:hover .wrap {
+    transform: rotateY(120deg);
+    transition: all 2s linear;
+  } */
+  .item {
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    text-align: center;
+    line-height: 200px;
+    /* backface-visibility:hidden */
+  }
+  
+  .item1 {
+    background: red;
+    transform: rotateY(0deg) translateZ(150px);
+  }
+  .item2 {
+    background: blue;
+    transform: rotateY(120deg) translateZ(150px);
+  }
+  .item3 {
+    background: yellowgreen;
+    transform: rotateY(240deg) translateZ(150px);
+  }
+  
+</style>
+<body>
+  <div class="content">
+    <div class="wrap">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+    </div>
+  </div>
+  
+</body>
+</html>
